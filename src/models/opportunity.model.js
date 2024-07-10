@@ -1,4 +1,4 @@
-export class OOpportunity{
+export class Opportunity{
     constructor(title, description, location, ongId, startDate, endDate, requirements){
         this.tile = title
         this.description = description
