@@ -9,7 +9,7 @@ opportunityRouter.post("/opportunity", (req, res) => {
     res.json({ opportunity });
 });
 
-opportunityRouter.get("/opportunities", (req, res) => {
+opportunityRouter.get("/opportunity", (req, res) => {
     const opportunityList = getAllOpportunities();
     res.json({ opportunityList });
 });

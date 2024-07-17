@@ -10,7 +10,7 @@ volunteerRouter.post("/volunteer", (req, res) => {
     res.json({ volunteer });
 });
 
-volunteerRouter.get("/volunteers", (req, res) => {
+volunteerRouter.get("/volunteer", (req, res) => {
     const volunteerList = getAllVolunteers();
     res.json({ volunteerList });
 });
