@@ -8,6 +8,6 @@ export const createONG = (name, description, location, website, contactEmail) =>
     return ong;
 };
 
-export const getAllNGOs = () => {
+export const getAllONGs = () => {
     return ongList;
 };
