@@ -6,31 +6,46 @@ const opportunityRouter = Router();
 opportunityRouter.post("/opportunity", (req, res) => {
     const { title, description, location, ongId, startDate, endDate, requirements } = req.body;
     const opportunity = createOpportunity(title, description, location, ongId, startDate, endDate, requirements);
-    res.json({ opportunity });
-});
+    res.status(201).json({ message: "Oportunidade criada com sucesso", opportunity });
+}
+);
 
 opportunityRouter.get("/opportunity", (req, res) => {
     const opportunityList = getAllOpportunities();
-    res.json({ opportunityList });
-});
+    res.status(200).json({ message: "Lista de oportunidades recuperada com sucesso", opportunityList });
+}
+);
 
 opportunityRouter.get("/opportunity/:id", (req, res) => {
     const { id } = req.params;
     const opportunity = getOpportunityById(id);
-    res.json({ opportunity });
-});
+    if (opportunity) {
+        res.status(200).json({ message: "Oportunidade encontrada com sucesso", opportunity });
+    } else {
+        res.status(404).json({ message: "Oportunidade não encontrada" });
+    }}
+);
 
 opportunityRouter.put("/opportunity/:id", (req, res) => {
     const { id } = req.params;
     const { title, description, location, ongId, startDate, endDate, requirements } = req.body;
     const opportunity = updateOpportunity(id, title, description, location, ongId, startDate, endDate, requirements);
-    res.json({ opportunity });
-});
+    if (opportunity) {
+        res.status(200).json({ message: "Oportunidade atualizada com sucesso", opportunity });
+    } else {
+        res.status(404).json({ message: "Oportunidade não encontrada" });
+    }}
+);
 
 opportunityRouter.delete("/opportunity/:id", (req, res) => {
     const { id } = req.params;
     const success = deleteOpportunity(id);
-    res.json({ success });
-});
+    if (success) {
+        res.status(200).json({ message: "Oportunidade deletada com sucesso" });
+    } else {
+        res.status(404).json({ message: "Oportunidade não encontrada" });
+    }
+}
+);
 
 export { opportunityRouter };

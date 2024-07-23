@@ -7,32 +7,46 @@ const volunteerRouter = Router();
 volunteerRouter.post("/volunteer", (req, res) => {
     const { name, email, phone, interests } = req.body;
     const volunteer = createVolunteer(name, email, phone, interests);
-    res.json({ volunteer });
-});
+    res.status(201).json({ message: "Voluntário criado com sucesso", volunteer });
+}
+);
 
 volunteerRouter.get("/volunteer", (req, res) => {
     const volunteerList = getAllVolunteers();
-    res.json({ volunteerList });
-});
+    res.status(200).json({ message: "Lista de voluntários recuperada com sucesso", volunteerList });
+}
+);
 
 volunteerRouter.get("/volunteer/:id", (req, res) => {
     const { id } = req.params;
     const volunteer = getVolunteerById(id);
-    res.json({ volunteer });
-});
+    if (volunteer) {
+        res.status(200).json({ message: "Voluntário encontrado com sucesso", volunteer });
+    } else {
+        res.status(404).json({ message: "Voluntário não encontrado" });
+    }}
+);
 
 volunteerRouter.put("/volunteer/:id", (req, res) => {
     const { id } = req.params;
     const { name, email, phone, interests } = req.body;
     const volunteer = updateVolunteer(id, name, email, phone, interests);
-    res.json({ volunteer });
-});
+    if (volunteer) {
+        res.status(200).json({ message: "Voluntário atualizado com sucesso", volunteer });
+    } else {
+        res.status(404).json({ message: "Voluntário não encontrado" });
+    }}
+);
 
 volunteerRouter.delete("/volunteer/:id", (req, res) => {
     const { id } = req.params;
     const success = deleteVolunteer(id);
-    res.json({ success });
-});
+    if (success) {
+        res.status(200).json({ message: "Voluntário deletado com sucesso" });
+    } else {
+        res.status(404).json({ message: "Voluntário não encontrado" });
+    }}
+);
 
 
 export { volunteerRouter };
