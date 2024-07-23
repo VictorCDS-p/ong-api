@@ -1,8 +1,8 @@
-# ONG Volunteering API
+# ONG API
 
 ## Descrição
 
-A ONG Volunteering API é uma API RESTful desenvolvida com Node.js e Express.js, projetada para gerenciar ONGs, oportunidades de voluntariado e voluntários. A API fornece endpoints para criar, ler, atualizar e deletar informações relacionadas a essas entidades, facilitando a integração e a manipulação dos dados em aplicações voltadas para o voluntariado.
+Esse projeto se trata de uma API desenvolvida com Node.js e Express.js, projetada para gerenciar ONGs, oportunidades de voluntariado e voluntários. A API fornece endpoints para criar, ler, atualizar e deletar informações relacionadas a essas entidades, facilitando a integração e a manipulação dos dados em aplicações voltadas para o voluntariado.
 
 ## Estrutura do Projeto
 
@@ -56,17 +56,17 @@ Abaixo estão os endpoints disponíveis na API, juntamente com uma descrição d
 
 ##### Obter ONG por ID
 - **Método:** GET
-- **Endpoint:** `/ong/:id`
+- **Endpoint:** `/ong/id`
 - **Descrição:** Retorna os detalhes de uma ONG específica com base no ID fornecido na URL.
 
 ##### Atualizar ONG
 - **Método:** PUT
-- **Endpoint:** `/ong/:id`
+- **Endpoint:** `/ong/id`
 - **Descrição:** Atualiza as informações de uma ONG específica com base no ID fornecido na URL. O corpo da requisição deve conter os novos detalhes da ONG.
 
 ##### Deletar ONG
 - **Método:** DELETE
-- **Endpoint:** `/ong/:id`
+- **Endpoint:** `/ong/id`
 - **Descrição:** Deleta uma ONG específica com base no ID fornecido na URL.
 
 #### Oportunidades
@@ -83,17 +83,17 @@ Abaixo estão os endpoints disponíveis na API, juntamente com uma descrição d
 
 ##### Obter Oportunidade por ID
 - **Método:** GET
-- **Endpoint:** `/opportunity/:id`
+- **Endpoint:** `/opportunity/id`
 - **Descrição:** Retorna os detalhes de uma oportunidade específica com base no ID fornecido na URL.
 
 ##### Atualizar Oportunidade
 - **Método:** PUT
-- **Endpoint:** `/opportunity/:id`
+- **Endpoint:** `/opportunity/id`
 - **Descrição:** Atualiza as informações de uma oportunidade específica com base no ID fornecido na URL. O corpo da requisição deve conter os novos detalhes da oportunidade.
 
 ##### Deletar Oportunidade
 - **Método:** DELETE
-- **Endpoint:** `/opportunity/:id`
+- **Endpoint:** `/opportunity/id`
 - **Descrição:** Deleta uma oportunidade específica com base no ID fornecido na URL.
 
 #### Voluntários
@@ -110,17 +110,17 @@ Abaixo estão os endpoints disponíveis na API, juntamente com uma descrição d
 
 ##### Obter Voluntário por ID
 - **Método:** GET
-- **Endpoint:** `/volunteer/:id`
+- **Endpoint:** `/volunteer/id`
 - **Descrição:** Retorna os detalhes de um voluntário específico com base no ID fornecido na URL.
 
 ##### Atualizar Voluntário
 - **Método:** PUT
-- **Endpoint:** `/volunteer/:id`
+- **Endpoint:** `/volunteer/id`
 - **Descrição:** Atualiza as informações de um voluntário específico com base no ID fornecido na URL. O corpo da requisição deve conter os novos detalhes do voluntário.
 
 ##### Deletar Voluntário
 - **Método:** DELETE
-- **Endpoint:** `/volunteer/:id`
+- **Endpoint:** `/volunteer/id`
 - **Descrição:** Deleta um voluntário específico com base no ID fornecido na URL.
 
 ## Como Usar
