@@ -2,7 +2,7 @@
 
 ## Descrição
 
-A ONG Volunteering API é uma API desenvolvida com Node.js e Express.js, projetada para gerenciar ONGs, oportunidades de voluntariado e voluntários. A API fornece endpoints para criar, ler, atualizar e deletar informações relacionadas a essas entidades, facilitando a integração e a manipulação dos dados em aplicações voltadas para o voluntariado.
+Esse projeto se trata de uma API desenvolvida com Node.js e Express.js, projetada para gerenciar ONGs, oportunidades de voluntariado e voluntários. A API fornece endpoints para criar, ler, atualizar e deletar informações relacionadas a essas entidades, facilitando a integração e a manipulação dos dados em aplicações voltadas para o voluntariado.
 
 ## Estrutura do Projeto
 
