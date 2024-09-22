@@ -5,16 +5,18 @@ const opportunityRouter = Router();
 
 opportunityRouter.post("/opportunity", (req, res) => {
     const { title, description, location, ongId, startDate, endDate, requirements } = req.body;
-    const opportunity = createOpportunity(title, description, location, ongId, startDate, endDate, requirements);
-    res.status(201).json({ message: "Oportunidade criada com sucesso", opportunity });
-}
-);
+    try {
+        const opportunity = createOpportunity(title, description, location, ongId, startDate, endDate, requirements);
+        res.status(201).json({ message: "Oportunidade criada com sucesso", opportunity });
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+});
 
 opportunityRouter.get("/opportunity", (req, res) => {
-    const opportunityList = getAllOpportunities();
-    res.status(200).json({ message: "Lista de oportunidades recuperada com sucesso", opportunityList });
-}
-);
+    const opportunities = getAllOpportunities();
+    res.status(200).json({ message: "Lista de oportunidades recuperada com sucesso", opportunities });
+});
 
 opportunityRouter.get("/opportunity/:id", (req, res) => {
     const { id } = req.params;
@@ -23,8 +25,8 @@ opportunityRouter.get("/opportunity/:id", (req, res) => {
         res.status(200).json({ message: "Oportunidade encontrada com sucesso", opportunity });
     } else {
         res.status(404).json({ message: "Oportunidade não encontrada" });
-    }}
-);
+    }
+});
 
 opportunityRouter.put("/opportunity/:id", (req, res) => {
     const { id } = req.params;
@@ -34,8 +36,8 @@ opportunityRouter.put("/opportunity/:id", (req, res) => {
         res.status(200).json({ message: "Oportunidade atualizada com sucesso", opportunity });
     } else {
         res.status(404).json({ message: "Oportunidade não encontrada" });
-    }}
-);
+    }
+});
 
 opportunityRouter.delete("/opportunity/:id", (req, res) => {
     const { id } = req.params;
@@ -45,7 +47,6 @@ opportunityRouter.delete("/opportunity/:id", (req, res) => {
     } else {
         res.status(404).json({ message: "Oportunidade não encontrada" });
     }
-}
-);
+});
 
 export { opportunityRouter };

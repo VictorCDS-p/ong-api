@@ -6,15 +6,14 @@ const ongRouter = Router();
 ongRouter.post("/ong", (req, res) => {
     const { name, description, location, website, contactEmail } = req.body;
     const ong = createONG(name, description, location, website, contactEmail);
+
     res.status(201).json({ message: "ONG criada com sucesso", ong });
-}
-);
+});
 
 ongRouter.get("/ong", (req, res) => {
     const ongList = getAllONGs();
     res.status(200).json({ message: "Lista de ONGs recuperada com sucesso", ongList });
-}
-);
+});
 
 ongRouter.get("/ong/:id", (req, res) => {
     const { id } = req.params;
@@ -23,8 +22,8 @@ ongRouter.get("/ong/:id", (req, res) => {
         res.status(200).json({ message: "ONG encontrada com sucesso", ong });
     } else {
         res.status(404).json({ message: "ONG não encontrada" });
-    }}
-);
+    }
+});
 
 ongRouter.put("/ong/:id", (req, res) => {
     const { id } = req.params;
@@ -34,8 +33,8 @@ ongRouter.put("/ong/:id", (req, res) => {
         res.status(200).json({ message: "ONG atualizada com sucesso", ong });
     } else {
         res.status(404).json({ message: "ONG não encontrada" });
-    }}
-);
+    }
+});
 
 ongRouter.delete("/ong/:id", (req, res) => {
     const { id } = req.params;
@@ -44,8 +43,7 @@ ongRouter.delete("/ong/:id", (req, res) => {
         res.status(200).json({ message: "ONG deletada com sucesso" });
     } else {
         res.status(404).json({ message: "ONG não encontrada" });
-    }}
-);
-
+    }
+});
 
 export { ongRouter };
