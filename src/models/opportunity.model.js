@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export class Opportunity {
     constructor(title, description, location, ongId, startDate, endDate, requirements) {
@@ -10,6 +10,6 @@ export class Opportunity {
         this.startDate = startDate;
         this.endDate = endDate;
         this.requirements = requirements;
-        this.volunteers = []; // Lista de IDs de voluntários
+        this.volunteers = [];
     }
 }
